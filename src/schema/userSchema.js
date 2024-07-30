@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require("bcrypt")
 
 const userSchema = new mongoose.Schema({
    firstName: {
@@ -41,14 +42,16 @@ const userSchema = new mongoose.Schema({
       required: [true, "Password should be provided"],
       minlength: [6, "Should be minimum 5 character long"]
    }
-},{
+}, {
    timestamps: true
 });
 
+userSchema.pre('save', async function () {
+   //here we can modify user password before it is saved in mongodb
+   const hashedPassword = await bcrypt.hash(this.password, 10);
+   this.password = hashedPassword;
+})
 
 const user = mongoose.model("user", userSchema);
 
 module.exports = user;
-
-
-
