@@ -5,9 +5,10 @@ const userRouter = require('./routes/userRoute');
 const cartRouter = require('./routes/cartRoute');
 const authRouter = require('./routes/authRoute');
 const cookieParser = require('cookie-parser');
-const { isLoggedIn } = require('./validation/authValidater');
+// const { isLoggedIn } = require('./validation/authValidater');
 const uploader = require('./middlewares/multerMiddleware');
-const cloudinary = require('./config/cloudinaryConfig')
+const cloudinary = require('./config/cloudinaryConfig');
+const fs = require('fs/promises');
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.post('/photo', uploader.single('incomingFile'), async (req, res) => {
     console.log(req.file);
     const result = await cloudinary.uploader.upload(req.file.path);
     console.log("result from cloudinary", result);
+    await fs.unlink(req.file.path);
     return res.json({ message: "ok" })
 })
 
