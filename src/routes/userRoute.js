@@ -7,3 +7,6 @@ const userRouter = express.Router();
 userRouter.post('/',createUser); //this is a route registration
 
 module.exports = userRouter; //exporting the router
+
+//GET/products/:id
+//delete/products/:id
