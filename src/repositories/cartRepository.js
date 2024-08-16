@@ -42,6 +42,7 @@ async function clearCart(userId) {
             throw new NotFoundError('Cart');
         }
 
+        //here is main logic to clear cart    
         cart.items = [];
         await cart.save();
         return cart;
