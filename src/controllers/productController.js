@@ -1,12 +1,11 @@
-const { getProductById, deleteProductById } = require('../repositories/productRepository');
-const { createProduct } = require('../services/productService');
+const { createProduct, getProductById, deleteProductById } = require('../services/productService');
 const AppError = require('../utils/appError');
 
 async function addProduct(req, res) {
     try {
         const product = await createProduct({
             productName: req.body.productName,
-            discription: req.body.discription,
+            description: req.body.description,
             imagePath: req.file?.path,
             price: req.body.price,
             category: req.body.category,

@@ -40,6 +40,17 @@ async function getProductById(productId) {
 
 async function deleteProductById(productId) {
     const response = await ProductRespository.deleteProductById(productId);
+    //logic for catch imageName from imageUrl
+    const imageUrl = response.productImage;
+    const urlArray = imageUrl.split('/');
+    console.log(urlArray);
+    const Name = urlArray[urlArray.length - 1];
+    console.log(Name);
+    const imageName = Name.split('.')[0]
+    console.log(imageName);
+
+    await cloudinary.uploader.destroy(imageName);
+
     if (!response) {
         throw new NotFoundError('Product');
     }

@@ -9,7 +9,7 @@ const productSchema = new mongoose.Schema({
     },
     description: {
         type: String,
-        discription: [5, "Product description must be atleast 5 characters"]
+        minlength: [5, "Product description must be atleast 5 characters"]
     },
     productImage: {
         type: String
