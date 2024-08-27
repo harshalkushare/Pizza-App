@@ -1,5 +1,5 @@
 const Product = require("../schema/productSchema");
-const BadRequestError = require("../utils/BadRequestError");
+const BadRequestError = require("../utils/badRequestError");
 const InternalServerError = require("../utils/internalServerError");
 
 async function createProduct(productDetails) {
