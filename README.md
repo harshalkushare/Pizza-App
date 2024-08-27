@@ -1,5 +1,5 @@
 # Pizza-App <br>
-This is <h2>Backend</h2> of my eCommerce Pizza Application with following featured:<br>
+This is <b>Backend</b> of my eCommerce Pizza Application with following featured:<br>
 -You can Register with <b>ADMIN</b> or <b>USER</b> role by default it consider as USER<br>
 -After signUp/register by default created <b>Cart</b> for you<br>
 -In that cart you can <b>add</b> product or <b>remove</b> product and <b>get</b> cart or <b>clear</b> cart<br>
