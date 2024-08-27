@@ -7,7 +7,7 @@ async function registerUser(userDetails) {
         email: userDetails.email,
         mobileNumber: userDetails.mobileNumber
     });
-    
+
     //2.If we found user
     if (user) {
         throw { reason: 'User with the given email and mobile number already exist', statusCode: 400 }
@@ -19,7 +19,9 @@ async function registerUser(userDetails) {
         password: userDetails.password,
         firstName: userDetails.firstName,
         lastName: userDetails.lastName,
-        mobileNumber: userDetails.mobileNumber
+        mobileNumber: userDetails.mobileNumber,
+        role: userDetails.role,
+        address:userDetails.address
     });
 
     if (!newUser) {
