@@ -122,7 +122,7 @@ async function changeOrderStatus(req, res) {
         const order = await updateOrder(req.params.orderId, req.body.status);
         return res.status(200).json({
             success: true,
-            message: 'Successfully updated the order2',
+            message: 'Successfully updated the order',
             error: {},
             data: order
         })
