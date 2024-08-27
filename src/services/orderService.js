@@ -1,5 +1,5 @@
 const { getCartByUserId, clearCart } = require('../repositories/cartRepository');
-const BadRequestError = require('../utils/BadRequestError');
+const BadRequestError = require('../utils/badRequestError');
 const NotFoundError = require('../utils/notFoundError');
 const { createNewOrder, getOrdersByUserId, getOrderById, updateOrderStatus } = require('../repositories/orderRepository');
 const InternalServerError = require('../utils/internalServerError');

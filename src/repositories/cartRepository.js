@@ -1,5 +1,5 @@
 const Cart = require('../schema/cartSchema');
-const BadRequestError = require('../utils/BadRequestError');
+const BadRequestError = require('../utils/badRequestError');
 const InternalServerError = require('../utils/internalServerError');
 const NotFoundError = require('../utils/notFoundError');
 
