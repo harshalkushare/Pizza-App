@@ -57,7 +57,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.pre('save', async function () {
-   //here we can modify user password before it is saved in mongodb
+   //here we can modify or secure user password before it is saved in mongodb
    const hashedPassword = await bcrypt.hash(this.password, 10);
    this.password = hashedPassword;
 })

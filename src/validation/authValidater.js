@@ -19,8 +19,8 @@ async function isLoggedIn(req, res, next) {
         if (!decoded) {
             throw new UnAuthorisedError();
         }
-        //if reached here, then user is authenticated allow them to access the api
 
+        //if reached here, then user is authenticated allow them to access the api
         req.user = {
             email: decoded.email,
             id: decoded.id,
@@ -60,4 +60,3 @@ module.exports = {
     isAdmin
 }
 
-//client->middleware->controller
