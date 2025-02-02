@@ -38,6 +38,14 @@ async function getProductById(productId) {
     return response;
 }
 
+async function getAllProductsData() {
+    const response = await ProductRespository.getAllProducts();
+    if (!response) {
+        throw new NotFoundError('Product');
+    }
+    return response;
+}
+
 async function deleteProductById(productId) {
     const response = await ProductRespository.deleteProductById(productId);
     //logic for catch imageName from imageUrl
@@ -60,5 +68,6 @@ async function deleteProductById(productId) {
 module.exports = {
     createProduct,
     getProductById,
-    deleteProductById
+    deleteProductById,
+    getAllProductsData
 }

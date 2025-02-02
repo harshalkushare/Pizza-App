@@ -7,9 +7,13 @@ const authRouter = require('./routes/authRoute');
 const cookieParser = require('cookie-parser');
 const productRouter = require('./routes/productRoute');
 const orderRouter = require('./routes/orderRoutes');
+const cors = require('cors');
 
 const app = express();
-
+app.use(cors({
+    origin:'http://localhost:5173',
+    credentials:true,
+}));
 //Middlewares
 app.use(cookieParser()); 
 app.use(express.json());
